@@ -1,0 +1,163 @@
+.singleMovie-bg-container {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .singleMovie-bg-container {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.movie-details-poster {
+  width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .movie-details-poster {
+    width: 300px;
+    height: auto;
+  }
+}
+
+.single-movie-details-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-left: 10px;
+  max-width: 100%;
+}
+
+@media (min-width: 768px) {
+  .single-movie-details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 10px;
+    flex-grow: 1; /* Allows it to take available space */
+    min-width: 0; /* Prevents overflow */
+    max-width: calc(100% - 320px); /* Prevents it from taking full width */
+  }
+}
+
+.single-movie-title {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  font-size: 17px;
+}
+
+@media (min-width: 768px) {
+  .single-movie-title {
+    margin-bottom: 10px;
+    margin-top: 0px;
+    font-size: 25px;
+  }
+}
+
+.single-movie-overview {
+  color: #5e5e5d;
+  font-size: 10px;
+}
+
+.single-movie-genre-ul-list {
+  display: flex;
+  align-items: center;
+  padding-left: 0px;
+  list-style-type: none;
+  color: #5e5e5d;
+  font-size: 12px;
+  margin-bottom: 0px;
+}
+
+@media (min-width: 768px) {
+  .single-movie-overview {
+    color: #5e5e5d;
+    font-size: 15px;
+    max-width: 900px;
+  }
+  .single-movie-genre-ul-list {
+    font-size: 18px;
+  }
+}
+
+.cast-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.cast-ul-container {
+  display: flex;
+  width: 100%;
+  max-width: 600px;
+  list-style-type: none;
+  padding-left: 0px;
+  overflow-x: auto; /* Enables horizontal scrolling */
+  white-space: nowrap; /* Ensures items stay in one row */
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+.cast-ul-container::-webkit-scrollbar {
+  display: none;
+}
+
+.cast-heading {
+  font-size: 13px;
+}
+
+@media (min-width: 768px) {
+  .cast-heading {
+    font-size: 17px;
+  }
+}
+
+.cast-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.cast-image {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.original-name {
+  font-size: 10px;
+  text-align: center; /* Centers text */
+  word-wrap: break-word; /* Ensures long words break */
+  white-space: normal; /* Allows text to wrap */
+  overflow-wrap: break-word; /* Alternative for modern browsers */
+  width: 100%; /* Ensures it takes full width */
+}
+
+.rating-duration-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 100px;
+  width: 100%;
+  max-width: 200px;
+  padding: 0px;
+}
+
+.duration {
+  font-size: 10px;
+  margin-bottom: 0px;
+  color: #5e5e5d;
+}
+
+@media (min-width: 768px) {
+  .duration {
+    font-size: 12px;
+    margin-bottom: 0px;
+    color: #5e5e5d;
+  }
+}

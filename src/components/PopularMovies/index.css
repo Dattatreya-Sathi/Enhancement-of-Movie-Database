@@ -1,0 +1,24 @@
+.popular-page-bg-container {
+  margin-top: 60px;
+  min-height: 90vh;
+  height: 100%;
+  padding: 10px;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.home-bg-container {
+  height: 100%;
+}
+
+.popular-movies-ul {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: 0px;
+}

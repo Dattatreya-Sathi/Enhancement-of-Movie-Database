@@ -1,0 +1,83 @@
+.movie-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 15px;
+  margin-bottom: 10px;
+  list-style-type: none;
+  border: solid 1px #71a3c1;
+  border-radius: 5px;
+  padding: 5px;
+  max-width: 160px;
+  width: 140px;
+  height: 280px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.popular-movies-poster {
+  display: block;
+  height: 200px;
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.popular-movie-title {
+  font-size: 12px;
+  margin-bottom: 10px;
+  max-width: 180px; /* Ensures title width matches image */
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* Limits title to 2 lines */
+  -webkit-box-orient: vertical;
+  word-break: break-word;
+
+  overflow: hidden;
+}
+.popular-movie-rating {
+  font-size: 12px;
+  margin-bottom: 0px;
+  color: #000000;
+  font-weight: bold;
+}
+
+.rating-container {
+  display: inline-flex;
+  align-items: center;
+  padding: 0px;
+}
+
+.star-icon {
+  margin-right: 2px;
+}
+
+.movie-details-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0px;
+  padding: 0px;
+}
+
+.view-details-btn {
+  background-color: #3689ef;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 8px;
+  color: #ffffff;
+}
+
+@media (min-width: 768px) {
+  .view-details-btn {
+    background-color: #3689ef;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #ffffff;
+  }
+}
