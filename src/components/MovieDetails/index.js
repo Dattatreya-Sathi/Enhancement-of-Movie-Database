@@ -93,8 +93,14 @@ const MovieDetails = props => {
   )
 
   const getSuccessView = () => {
-    const {posterPath, title, overview, genres, voteAverage, runtime} =
-      singleMovieDetail
+    const {
+      posterPath,
+      title,
+      overview,
+      genres,
+      voteAverage,
+      runtime,
+    } = singleMovieDetail
     // console.log(genres)
     return (
       <div className="singleMovie-bg-container">

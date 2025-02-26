@@ -25,7 +25,7 @@ const SearchResults = () => {
     const {results} = searchedResult
     // console.log(currentPage)
     return (
-      <div className="row p-0 ms-0 me-0 mt-3">
+      <div className="search-page-bg-container">
         {results.length > 0 ? (
           <ul className="popular-movies-ul">
             {results.map(eachMovie => (
@@ -36,13 +36,11 @@ const SearchResults = () => {
           <h1 className="text-center">No Results Found</h1>
         )}
         {results.length > 0 && (
-          <footer>
-            <Pagination
-              onPageChange={newPage => getSearchedMoviesData(newPage)}
-              currentPage={currentPage}
-              totalPages={searchedResult.totalPages}
-            />
-          </footer>
+          <Pagination
+            onPageChange={newPage => getSearchedMoviesData(newPage)}
+            currentPage={currentPage}
+            totalPages={searchedResult.totalPages}
+          />
         )}
       </div>
     )
@@ -50,8 +48,16 @@ const SearchResults = () => {
 
   const getFailureView = () => (
     <div className="failure-container">
-      <h1>Something Went Wrong </h1>
-      <button type="button" className="btn btn-primary" onClick={triggerSearch}>
+      <img
+        className="failure-image"
+        alt="failure view"
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+      />
+      <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-description">
+        We cannot seem to find the page you are looking for.
+      </p>
+      <button type="button" className="retry-button" onClick={triggerSearch}>
         Retry
       </button>
     </div>

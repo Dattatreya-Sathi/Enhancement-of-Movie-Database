@@ -1,11 +1,12 @@
 import {useState} from 'react'
-import {Switch, Route} from 'react-router-dom'
+import {Switch, Route, Redirect} from 'react-router-dom'
 import MoviesContext from './context/MoviesContext'
 import PopularMovies from './components/PopularMovies'
 import SearchResults from './components/SearchResults'
 import MovieDetails from './components/MovieDetails'
 import TopRated from './components/TopRated'
 import UpcomingMovies from './components/UpcomingMovies'
+import NotFound from './components/NotFound'
 import './App.css'
 
 const App = () => {
@@ -70,15 +71,15 @@ const App = () => {
         getSearchedMoviesData,
       }}
     >
-      <div className="grid-main-container container-fluid d-flex flex-column">
-        <Switch>
-          <Route exact path="/" component={PopularMovies} />
-          <Route exact path="/search" component={SearchResults} />
-          <Route exact path="/movie/:id" component={MovieDetails} />
-          <Route exact path="/top-rated" component={TopRated} />
-          <Route exact path="/upcoming" component={UpcomingMovies} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route exact path="/" component={PopularMovies} />
+        <Route exact path="/search" component={SearchResults} />
+        <Route exact path="/movie/:id" component={MovieDetails} />
+        <Route exact path="/top-rated" component={TopRated} />
+        <Route exact path="/upcoming" component={UpcomingMovies} />
+        <Route exact path="/not-found" component={NotFound} />
+        <Redirect to="/not-found" />
+      </Switch>
     </MoviesContext.Provider>
   )
 }

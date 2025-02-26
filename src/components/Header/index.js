@@ -75,12 +75,11 @@ const Header = () => {
           <form className="d-flex" role="search" onSubmit={onClickSearch}>
             <input
               className="form-control me-2"
-              type="search"
+              type="text"
               placeholder="Search"
               aria-label="Search"
               onChange={onChangeInput}
               value={searchInput}
-              role="textbox"
             />
             <button className="btn btn-outline-success" type="submit">
               Search

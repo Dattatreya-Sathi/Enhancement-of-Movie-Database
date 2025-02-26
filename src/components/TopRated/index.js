@@ -61,27 +61,28 @@ const TopRated = () => {
     const {results} = topRatedMovies
     // console.log(currentPage)
     return (
-      <div className="row p-0 ms-0 me-0 mt-3">
+      <div className="topmovies-bg-container">
         <ul className="topmovies-movies-ul">
           {results.map(eachMovie => (
             <MovieItem key={eachMovie.id} movie={eachMovie} />
           ))}
         </ul>
-        <footer>
-          <Pagination
-            currentPage={currentPage}
-            onPageChange={getMoviesData}
-            totalPages={topRatedMovies.totalPages}
-          />
-        </footer>
       </div>
     )
   }
 
   const getFailureView = () => (
     <div className="failure-container">
-      <h1>Something Went Wrong </h1>
-      <button type="button" className="btn btn-primary" onClick={getMoviesData}>
+      <img
+        className="failure-image"
+        alt="failure view"
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+      />
+      <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-description">
+        We cannot seem to find the page you are looking for.
+      </p>
+      <button type="button" className="retry-button" onClick={getMoviesData}>
         Retry
       </button>
     </div>
@@ -106,6 +107,11 @@ const TopRated = () => {
       <div className="topmovies-page-bg-container">
         {getTopRatedPageResponse()}
       </div>
+      <Pagination
+        currentPage={currentPage}
+        onPageChange={getMoviesData}
+        totalPages={topRatedMovies.totalPages}
+      />
     </>
   )
 }

@@ -45,47 +45,55 @@ const PopularMovies = () => {
     </div>
   )
 
+  const renderFailureView = () => (
+    <div className="failure-container">
+      <img
+        className="failure-image"
+        alt="failure view"
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+      />
+      <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-description">
+        We cannot seem to find the page you are looking for.
+      </p>
+      <button
+        type="button"
+        className="retry-button"
+        onClick={() => getMoviesData(currentPage)}
+      >
+        Retry
+      </button>
+    </div>
+  )
+
   const getSuccessView = () => {
-    const {results, totalPages} = popularMovies
+    const {results} = popularMovies
 
     return (
-      <div className="row p-0 ms-0 me-0 mt-3">
+      <div className="home-bg-container">
         <ul className="popular-movies-ul">
           {results.map(movie => (
             <MovieItem key={movie.id} movie={movie} />
           ))}
         </ul>
-        <footer>
-          <Pagination
-            totalPages={totalPages}
-            currentPage={currentPage}
-            onPageChange={setCurrentPage}
-          />
-        </footer>
       </div>
     )
   }
 
   return (
-    <div>
+    <>
       <Header />
       <div className="popular-page-bg-container">
         {apiState === 'LOADING' && getLoadingView()}
         {apiState === 'SUCCESS' && getSuccessView()}
-        {apiState === 'FAILURE' && (
-          <div className="failure-container">
-            <h1>Something Went Wrong</h1>
-            <button
-              type="button"
-              className="btn btn-primary"
-              onClick={() => getMoviesData(currentPage)}
-            >
-              Retry
-            </button>
-          </div>
-        )}
+        {apiState === 'FAILURE' && renderFailureView()}
+        <Pagination
+          totalPages={popularMovies.totalPages}
+          currentPage={currentPage}
+          onPageChange={setCurrentPage}
+        />
       </div>
-    </div>
+    </>
   )
 }
 

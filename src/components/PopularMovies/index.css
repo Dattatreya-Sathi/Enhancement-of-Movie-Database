@@ -3,6 +3,7 @@
   min-height: 90vh;
   height: 100%;
   padding: 10px;
+  border: solid red;
 }
 
 .loader-container {
@@ -21,4 +22,50 @@
   display: flex;
   flex-wrap: wrap;
   padding-left: 0px;
+}
+
+.failure-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.failure-image {
+  width: 80%;
+  max-width: 500px;
+}
+.failure-heading {
+  color: #ffffff;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-heading {
+    font-size: 35px;
+  }
+}
+
+.failure-description {
+  color: #475569;
+  font-family: 'Roboto';
+  font-size: 15px;
+  margin-top: 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .failure-description {
+    font-size: 25px;
+  }
+}
+
+.retry-button {
+  background-color: #6366f1;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px 10px 20px;
+  color: #ffffff;
+  outline: none;
+  cursor: pointer;
+  margin-top: 0px;
 }

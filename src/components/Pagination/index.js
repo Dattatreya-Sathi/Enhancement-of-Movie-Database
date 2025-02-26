@@ -1,7 +1,7 @@
-import React from 'react'
+import {Component} from 'react'
 import './index.css'
 
-class Pagination extends React.Component {
+class Pagination extends Component {
   onClickNext = () => {
     const {onPageChange, currentPage, totalPages} = this.props
     if (currentPage < totalPages) {
@@ -29,7 +29,7 @@ class Pagination extends React.Component {
               onClick={this.onClickPrev}
               disabled={currentPage === 1}
             >
-              Previous
+              Prev
             </button>
           </li>
           <li className="page-item">
